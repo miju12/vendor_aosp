@@ -24,21 +24,16 @@ bacon: $(INTERNAL_OTA_PACKAGE_TARGET)
 	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(CUSTOM_TARGET_PACKAGE)
 	$(hide) $(SHA256) $(CUSTOM_TARGET_PACKAGE) | sed "s|$(PRODUCT_OUT)/||" > $(CUSTOM_TARGET_PACKAGE).sha256sum
 	$(hide) $(MD5) $(CUSTOM_TARGET_PACKAGE) | sed "s|$(PRODUCT_OUT)/||" > $(CUSTOM_TARGET_PACKAGE).md5sum
-	@echo -e ${CL_CYN}""${CL_CYN}
-	@echo -e ${CL_CYN}"      ____            _           _        "${CL_CYN}
-	@echo -e ${CL_CYN}"     |  _ \ _ __ ___ (_) ___  ___| |_      "${CL_CYN}
-	@echo -e ${CL_CYN}"     | |_) | '__/ _ \| |/ _ \/ __| __|     "${CL_CYN}
-	@echo -e ${CL_CYN}"     |  __/| | | (_) | |  __/ (__| |_      "${CL_CYN}
-	@echo -e ${CL_CYN}"     |_|   |_|  \___// |\___|\___|\__|     "${CL_CYN}
-	@echo -e ${CL_CYN}"     |_|            |_/                    "${CL_CYN}
-	@echo -e ${CL_CYN}"                                           "${CL_CYN}
-	@echo -e ${CL_CYN}"            _____ _ _     _                "${CL_CYN}
-	@echo -e ${CL_CYN}"           | ____| (_)_ _(_)_ __           "${CL_CYN}
-	@echo -e ${CL_CYN}"           |  _| | | \ \/ / | '__|         "${CL_CYN}
-	@echo -e ${CL_CYN}"           | |___| | |>  <| | |            "${CL_CYN}
-	@echo -e ${CL_CYN}"           |_____|_|_/_/\_\_|_|            "${CL_CYN}
-	@echo -e ${CL_CYN}"                                           "${CL_CYN}    
-	@echo -e ${CL_CYN}""${CL_CYN}
+	@echo ""
+	@echo -e  ${CL_YLW}"*"${CL_BLU}"C"${CL_RED}"a"${CL_YLW}"n"${CL_GRN}"d"${CL_BLU}"y"${CL_RED}"11"${CL_YLW}"*"${CL_BLU}"C"${CL_RED}"a"${CL_YLW}"n"${CL_GRN}"d"${CL_BLU}"y"${CL_RED}"11"${CL_YLW}"*"${CL_BLU}"C"${CL_RED}"a"${CL_YLW}"n"${CL_GRN}"d"${CL_BLU}"y"${CL_RED}"11"${CL_YLW}"*"${CL_BLU}"C"${CL_RED}"a"${CL_YLW}"n"${CL_GRN}"d"${CL_BLU}"y"${CL_RED}"11"${CL_YLW}"*"${CL_BLU}"C"${CL_RED}"a"${CL_YLW}"n"${CL_GRN}"d"${CL_BLU}"y"${CL_RED}"11"${CL_YLW}"*"${CL_BLU}"C"${CL_RED}"a"${CL_YLW}"n"${CL_GRN}"d"${CL_BLU}"y"${CL_RED}"11"${CL_YLW}"*"${CL_BLU}"C"${CL_RED}"a"${CL_YLW}"n"${CL_GRN}"d"${CL_BLU}"y"${CL_RED}"11"${CL_YLW}"*"${CL_RST}
+	@echo ""
+	@echo -e ${CL_RED}"  #HH||"${CL_YLW}"  #|  "${CL_GRN}"##  ||"${CL_BLU}"##HH| "${CL_RED}"##  ||"${CL_YLW}"##HH| "${CL_GRN}" #HH| "${CL_BLU}"##   ||"${CL_RED}" #HH||"${CL_RST}
+	@echo -e ${CL_RED}" ##    "${CL_YLW}" #HH| "${CL_GRN}"##H ||"${CL_BLU}"##  ||"${CL_RED}"##  ||"${CL_YLW}"##  ||"${CL_GRN}"##  ||"${CL_BLU}"### H||"${CL_RED}"##    "${CL_RST}
+	@echo -e ${CL_RED}" ##    "${CL_YLW}"##  ||"${CL_GRN}"##HH||"${CL_BLU}"##  ||"${CL_RED}" #HH| "${CL_YLW}"##HH| "${CL_GRN}"##  ||"${CL_BLU}"###HH||"${CL_RED}" #HH| "${CL_RST}
+	@echo -e ${CL_RED}" ##    "${CL_YLW}"##HH||"${CL_GRN}"## H||"${CL_BLU}"##  ||"${CL_RED}"  #|  "${CL_YLW}"## H| "${CL_GRN}"##  ||"${CL_BLU}"## H ||"${CL_RED}"    ||"${CL_RST}
+	@echo -e ${CL_RED}"  #HH||"${CL_YLW}"##  ||"${CL_GRN}"##  ||"${CL_BLU}"##HH| "${CL_RED}"  #|  "${CL_YLW}"##  ||"${CL_GRN}" #HH| "${CL_BLU}"##   ||"${CL_RED}" ##HH|"${CL_RST}
+	@echo ""
+	@echo -e ${CL_YLW}"         "${CL_GRN}"Build complete! "${CL_YLW}"Taste "${CL_GRN}"the "${CL_BLU}"S"${CL_RED}"w"${CL_YLW}"e"${CL_GRN}"e"${CL_BLU}"t"${CL_RED}"n"${CL_YLW}"e"${CL_GRN}"s"${CL_BLU}"s"${CL_RED}"!"${CL_YLW}"™"${CL_RST}
 	@echo -e ${CL_CYN}"===========-Package Completed-==========="${CL_RST}
 	@echo -e ${CL_BLD}${CL_YLW}"Zip: "${CL_YLW} $(CUSTOM_TARGET_PACKAGE)${CL_RST}
 	@echo -e ${CL_BLD}${CL_YLW}"MD5: "${CL_YLW}" `cat $(CUSTOM_TARGET_PACKAGE).md5sum | cut -d ' ' -f 1` "${CL_RST}

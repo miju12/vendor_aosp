@@ -20,10 +20,10 @@ endif
 
 # Versioning props
 ADDITIONAL_SYSTEM_PROPERTIES  += \
-    org.elixir.version=$(Elixir_BASE_VERSION) \
-    org.elixir.version.display=$(CUSTOM_VERSION) \
-    org.elixir.build_date=$(CUSTOM_BUILD_DATE) \
-    org.elixir.build_date_utc=$(CUSTOM_BUILD_DATE_UTC) \
-    org.elixir.build_type=$(CUSTOM_BUILD_TYPE) \
-    org.elixir.codename=$(Elixir_CODENAME) \
-    ro.elixir.maintainer=$(Elixir_MAINTAINER)
+    org.candy.version=$(CANDY_BASE_VERSION) \
+    org.candy.version.display=$(CUSTOM_VERSION) \
+    org.candy.build_date=$(CUSTOM_BUILD_DATE) \
+    org.candy.build_date_utc=$(CUSTOM_BUILD_DATE_UTC) \
+    org.candy.build_type=$(CUSTOM_BUILD_TYPE) \
+    org.candy.codename=$(CANDY_CODENAME) \
+    ro.candy.maintainer=$(CANDY_MAINTAINER)
