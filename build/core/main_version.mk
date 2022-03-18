@@ -20,7 +20,7 @@ endif
 
 # Versioning props
 ADDITIONAL_SYSTEM_PROPERTIES  += \
-    org.candy.version=$(CANDY_BASE_VERSION) \
+    org.candy.version=$(Candy_BASE_VERSION) \
     org.candy.version.display=$(CUSTOM_VERSION) \
     org.candy.build_date=$(CUSTOM_BUILD_DATE) \
     org.candy.build_date_utc=$(CUSTOM_BUILD_DATE_UTC) \
