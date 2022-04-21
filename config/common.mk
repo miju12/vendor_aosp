@@ -1,7 +1,7 @@
 # Branding
 $(call inherit-product, vendor/candy/config/branding.mk)
 
-PRODUCT_BRAND ?= Project-Elixir
+PRODUCT_BRAND ?= Candy-Roms
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
@@ -223,6 +223,10 @@ $(call inherit-product, vendor/candy/config/fonts.mk)
 
 # GApps
 $(call inherit-product, vendor/gapps/config.mk)
+# Gapps
+ifeq ($(BUILD_WITH_GAPPS), true)
+    $(call inherit-product, vendor/gapps/config.mk)
+endif
 
 # OTA
 $(call inherit-product, vendor/candy/config/ota.mk)
