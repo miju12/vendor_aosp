@@ -13,7 +13,7 @@
 # limitations under the License.
 
 #CANDY Roms Versioning :
-CANDY_MOD_VERSION = TwelveL
+CANDY_MOD_VERSION = 12.1
 
 ifndef CANDY_BUILD_TYPE
     CANDY_BUILD_TYPE := UNOFFICIAL

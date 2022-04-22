@@ -1,7 +1,7 @@
 # Branding
 $(call inherit-product, vendor/candy/config/branding.mk)
 
-PRODUCT_BRAND ?= Candy-Roms
+PRODUCT_BRAND ?= CandyRoms
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
@@ -75,6 +75,10 @@ PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
 # the size of the system image. This has no bearing on stack traces, but will
 # leave less information available via JDWP.
 PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
+
+# Bootanimation
+PRODUCT_PACKAGES += \
+    bootanimation.zip
 
 # Charger
 PRODUCT_PACKAGES += \
@@ -202,21 +206,18 @@ PRODUCT_COPY_FILES += \
     vendor/candy/prebuilt/common/etc/sysconfig/pixel_2016_exclusive.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/pixel_2016_exclusive.xml
 
 # Face Unlock
-#TARGET_FACE_UNLOCK_SUPPORTED ?= true
-#ifeq ($(TARGET_FACE_UNLOCK_SUPPORTED),true)
-#PRODUCT_PACKAGES += \
-#    FaceUnlockService
-#PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-#    ro.face_unlock_service.enabled=$(TARGET_FACE_UNLOCK_SUPPORTED)
-#PRODUCT_COPY_FILES += \
-#    frameworks/native/data/etc/android.hardware.biometrics.face.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.hardware.biometrics.face.xml
-#endif
+TARGET_FACE_UNLOCK_SUPPORTED ?= true
+ifeq ($(TARGET_FACE_UNLOCK_SUPPORTED),true)
+PRODUCT_PACKAGES += \
+    FaceUnlockService
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    ro.face_unlock_service.enabled=$(TARGET_FACE_UNLOCK_SUPPORTED)
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.biometrics.face.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.hardware.biometrics.face.xml
+endif
 
 # Audio
 $(call inherit-product, vendor/candy/config/audio.mk)
-
-# Bootanimation
-$(call inherit-product, vendor/candy/config/bootanimation.mk)
 
 # Fonts
 $(call inherit-product, vendor/candy/config/fonts.mk)
