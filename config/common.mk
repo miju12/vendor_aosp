@@ -222,6 +222,13 @@ $(call inherit-product, vendor/candy/config/audio.mk)
 # Fonts
 $(call inherit-product, vendor/candy/config/fonts.mk)
 
+
+# Inherit from gfonts config
+$(call inherit-product, vendor/candy/config/gfonts.mk)
+
+# Inherit from themes config
+$(call inherit-product, vendor/candy/config/themes.mk)
+
 # GApps
 $(call inherit-product, vendor/gapps/config.mk)
 # Gapps
